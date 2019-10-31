@@ -1,0 +1,20 @@
+[core]
+	editor = vim
+[user]
+	name = Adam Piekarczyk
+	email = adam.jan.piekarczyk@gmail.com
+[color]
+	ui = true
+[merge]
+	tool = diffconflicts
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[mergetool "diffconflicts"]
+	cmd = vim -c DiffConflicts \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
+	trustExitCode = true
+[mergetool]
+	keepBackup = false
+
