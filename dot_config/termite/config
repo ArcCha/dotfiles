@@ -1,0 +1,9 @@
+[options]
+font = Inconsolata-g for Powerline 13
+#font = Inconsolata-g for Powerline 22
+
+[colors]
+foreground = #00cc00
+background = #000000
+#foreground = #000000
+#background = #ffffff

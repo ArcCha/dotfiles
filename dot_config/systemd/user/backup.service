@@ -1,0 +1,8 @@
+[Unit]
+Description=Backup home to NAS
+Wants=network-online.target
+After=network-online.target
+[Service]
+ExecStart=%h/.bin/backup-to-nas
+[Install]
+WantedBy=multi-user.target
