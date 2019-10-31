@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+
+echo "Started backup service." | systemd-cat --identifier="backup"
+
+start=`date +%s`
+ping -c 1 menegroth.lan &> /dev/null
+
+if [ $? -ne 0 ]
+then
+  echo "Menegroth not available, exiting." | systemd-cat --identifier="backup"
+  exit 0
+fi
+echo "Menegroth is available, performing backup..." | systemd-cat --identifier="backup"
+
+mount /mnt/nas
+rsync -a --delete --quiet /home/arccha /mnt/nas
+umount /mnt/nas
+
+end=`date +%s`
+runtime=$((end-start))
+echo "Backup finished in $runtime." | systemd-cat --identifier="backup"
+
