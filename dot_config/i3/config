@@ -183,3 +183,6 @@ exec --no-startup-id numlockx on
 # Set background
 exec --no-startup-id fehbg
 
+# Input method for Japanese
+exec --no-startup-id ibus-daemon -drx
+
