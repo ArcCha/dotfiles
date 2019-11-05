@@ -1,5 +1,5 @@
-{{- if eq .chezmoi.hostname "arkenstone" }}
-adb
+{{- if eq .chezmoi.hostname "arkenstone" -}}
+android-sdk-platform-tools
 android-studio
 android-udev
 bazel
@@ -21,11 +21,13 @@ python-virtualenv
 raccoon
 tensorflow
 tensorflow-cuda
-{{- end }}
-{{- if eq .chezmoi.hostname "stone" }}
+{{- end -}}
+{{- if eq .chezmoi.hostname "stone" -}}
+cups
 hplip
 ifplugd
 nvidia-390xx
+simple-scan
 {{- end }}
 acpi
 alsa
@@ -41,16 +43,14 @@ chezmoi
 clang
 cmake
 cryptsetup
-cups
 dhcpcd
+diffutils
 direnv
 dmenu
 dos2unix
 dunst
 exa
 exfat-utils
-fcitx-im
-fcitx-mozc
 feh
 filezilla
 firefox
@@ -65,19 +65,19 @@ highlight
 htop
 httrack
 i3-easyfocus-git
+i3-wm
 i3lock
 i3status
-i3-wm
 ibus-mozc
 imagemagick
 inkscape
 inotify-tools
 insomnia
+intel-ucode
 ipython
 jdk-openjdk
 jpegoptim
 kakasi
-kcm-fcitx
 keepassx2
 keybase-bin
 krita
@@ -88,10 +88,10 @@ lsyncd
 mecab-ipadic
 mediainfo
 minicom
-mpv
 ncdu
 ncurses
 neovim
+netctl
 nfs-utils
 nmap
 ntfs-3g
@@ -107,7 +107,6 @@ optipng
 otf-ipafont
 p7zip
 package-query
-pacman
 pacman-contrib
 pavucontrol
 pciutils
@@ -124,23 +123,18 @@ pulseaudio-alsa
 pulsemixer
 pwgen
 ranger
-rdesktop
-readline
 redshift
 reflector-timer
 remmina
 rsync
 screen
 sedutil
-simple-scan
 spectacle
 spotify
-stlink
-sudo
 sxiv
 sysstat
+systemd-boot-pacman-hook
 termite
-tk
 tree
 ttf-font-awesome
 ttf-google-fonts-git
