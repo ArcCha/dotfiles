@@ -184,3 +184,6 @@ exec --no-startup-id fehbg
 # Input method for Japanese
 exec --no-startup-id ibus-daemon -drx
 
+# dunst notifications daemon
+exec --no-startup-id dunst
+
