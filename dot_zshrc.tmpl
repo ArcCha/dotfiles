@@ -70,3 +70,9 @@ source /opt/anaconda/etc/profile.d/conda.sh
 # added by travis gem
 [ -f /home/arccha/.travis/travis.sh ] && source /home/arccha/.travis/travis.sh
 
+{{- if eq .chezmoi.hostname "DA31-AP2-S01" -}}
+# https work proxy
+export https_proxy="192.168.70.1:8080"
+{{- end -}}
+
+
