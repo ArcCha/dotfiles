@@ -36,9 +36,10 @@ alias pdfcompress='function _pdfcompress() { gs -sDEVICE=pdfwrite -dCompatibilit
 alias sa="source activate \`conda env list | head -n -2 | tail -n +3 | cut -f1 -d' ' | pick\`"
 alias sd="source deactivate"
 alias ssha='find ~/.ssh/ -type f | grep -v ".*\.pub\|config\|known_hosts" | pick | xargs ssh-add'
+alias e="exa -alh"
 
-export RUST_SRC_PATH=/home/arccha/programowanie/rust/rust/src
-export CARGO_HOME=/home/arccha/.cargo
+#export RUST_SRC_PATH=/home/arccha/programowanie/rust/rust/src
+#export CARGO_HOME=/home/arccha/.cargo
 export PATH="$PATH:$HOME/.cargo/bin"
 
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
@@ -64,13 +65,15 @@ source /etc/profile.d/autojump.zsh
 # Local executables
 export PATH="$PATH:$HOME/.bin"
 
+{{ if ne .chezmoi.hostname "DA31-AP2-S01" -}}
 # Conda
 source /opt/anaconda/etc/profile.d/conda.sh
+{{- end -}}
 
 # added by travis gem
 [ -f /home/arccha/.travis/travis.sh ] && source /home/arccha/.travis/travis.sh
 
-{{- if eq .chezmoi.hostname "DA31-AP2-S01" -}}
+{{ if eq .chezmoi.hostname "DA31-AP2-S01" -}}
 # https work proxy
 export https_proxy="192.168.70.1:8080"
 {{- end -}}
