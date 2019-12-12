@@ -29,6 +29,11 @@ ifplugd
 nvidia-390xx
 simple-scan
 {{- end }}
+{{- if eq .chezmoi.hostname "DA31-AP2-S01" -}}
+lvm2
+man-db
+man-pages
+{{- end }}
 acpi
 alsa
 alsa-utils
@@ -54,6 +59,7 @@ exfat-utils
 feh
 filezilla
 firefox
+freerdp
 fzf
 ghostscript
 gimp
