@@ -7,6 +7,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'whiteinge/diffconflicts'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'pearofducks/ansible-vim'
 
 Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
