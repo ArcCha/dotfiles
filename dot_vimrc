@@ -8,12 +8,17 @@ Plugin 'mattn/emmet-vim'
 Plugin 'whiteinge/diffconflicts'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
 filetype indent plugin on
 
 """ General
+" Remap leader and localleader
+let mapleader = " "
+let maplocalleader = " "
 
 " Use system clipboard
 set clipboard=unnamedplus
@@ -89,4 +94,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Use only one Leader key for easymotion
+map <Leader> <Plug>(easymotion-prefix)
 
