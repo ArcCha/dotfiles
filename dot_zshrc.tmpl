@@ -30,8 +30,8 @@ else
   #export TERM='xterm'
 fi
 
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
+alias zshconfig="chezmoi edit ~/.zshrc"
+alias vimconfig="chezmoi edit ~/.vimrc"
 alias pdfcompress='function _pdfcompress() { gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$2 $1; };_pdfcompress'
 alias sa="source activate \`conda env list | head -n -2 | tail -n +3 | cut -f1 -d' ' | pick\`"
 alias sd="source deactivate"
@@ -63,7 +63,7 @@ export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 source /etc/profile.d/autojump.zsh
 
 # Local executables
-export PATH="$PATH:$HOME/.bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 {{ if ne .chezmoi.hostname "DA31-AP2-S01" -}}
 # Conda
@@ -72,10 +72,4 @@ source /opt/anaconda/etc/profile.d/conda.sh
 
 # added by travis gem
 [ -f /home/arccha/.travis/travis.sh ] && source /home/arccha/.travis/travis.sh
-
-{{ if eq .chezmoi.hostname "DA31-AP2-S01" -}}
-# https work proxy
-export https_proxy="192.168.70.1:8080"
-{{- end -}}
-
 
