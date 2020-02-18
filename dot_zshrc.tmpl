@@ -77,6 +77,6 @@ export GOPATH="$HOME/.go"
 
 {{ if eq .chezmoi.hostname "DA31-AP2-S01" -}}
 export TF_VAR_ssh_key_pub=`cat ~/.ssh/work.pub`
-{{- end -}}
+{{ end -}}
 
 alias k="kubectl"
