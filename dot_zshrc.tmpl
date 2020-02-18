@@ -74,3 +74,8 @@ source /opt/anaconda/etc/profile.d/conda.sh
 [ -f /home/arccha/.travis/travis.sh ] && source /home/arccha/.travis/travis.sh
 
 export GOPATH="$HOME/.go"
+
+{{ if eq .chezmoi.hostname "DA31-AP2-S01" -}}
+export TF_VAR_ssh_key_pub=`cat ~/.ssh/work.pub`
+{{- end -}}
+
