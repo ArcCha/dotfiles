@@ -33,8 +33,8 @@ fi
 alias zshconfig="chezmoi edit ~/.zshrc"
 alias vimconfig="chezmoi edit ~/.vimrc"
 alias pdfcompress='function _pdfcompress() { gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$2 $1; };_pdfcompress'
-alias sa="source activate \`conda env list | head -n -2 | tail -n +3 | cut -f1 -d' ' | pick\`"
-alias sd="source deactivate"
+alias coa="conda activate"
+alias cod="conda deactivate"
 alias ssha='find ~/.ssh/ -type f | grep -v ".*\.pub\|config\|known_hosts" | pick | xargs ssh-add'
 alias e="exa -alh"
 
