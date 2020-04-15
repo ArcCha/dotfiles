@@ -32,6 +32,7 @@ fi
 
 alias zshconfig="chezmoi edit ~/.zshrc"
 alias vimconfig="chezmoi edit ~/.vimrc"
+alias sshconfig="chezmoi edit ~/.ssh/config"
 alias pdfcompress='function _pdfcompress() { gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$2 $1; };_pdfcompress'
 alias coa="conda activate"
 alias cod="conda deactivate"
@@ -76,7 +77,8 @@ source /opt/anaconda/etc/profile.d/conda.sh
 export GOPATH="$HOME/.go"
 
 {{ if eq .chezmoi.hostname "DA31-AP2-S01" -}}
-export TF_VAR_ssh_key_pub=`cat ~/.ssh/work.pub`
+export TF_VAR_ssh_key_pub=$(cat ~/.ssh/work.pub)
+export SSH_PUB_KEY=$(cat ~/.ssh/work.pub)
 {{ end -}}
 
 alias k="kubectl"
