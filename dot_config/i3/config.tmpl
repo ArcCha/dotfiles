@@ -59,6 +59,20 @@ bindsym $mod+space focus mode_toggle
 # focus the child container
 #bindsym $mod+d focus child
 
+# bind workspaces to outputs
+{{- if eq .chezmoi.hostname "arkenstone" -}}
+workspace 1 output DP-0
+workspace 2 output DP-0
+workspace 3 output HDMI-0
+workspace 4 output HDMI-0
+workspace 5 output HDMI-0 
+workspace 6 output HDMI-0 
+workspace 7 output DP-2 
+workspace 8 output DP-2
+workspace 9 output DP-2
+workspace 10 output DP-2
+{{- end -}}
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
