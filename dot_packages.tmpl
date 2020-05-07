@@ -1,7 +1,4 @@
 {{- if eq .chezmoi.hostname "arkenstone" -}}
-android-sdk-platform-tools
-android-studio
-android-udev
 bazel
 cuda
 cuda-9.2
@@ -45,6 +42,10 @@ minicom
 podman
 skopeo
 buildah
+yubikey-manager
+yubikey-manager-qt
+yubikey-personalization
+yubikey-personalization-gui
 {{- end -}}
 {{- if eq .chezmoi.hostname "stone" -}}
 cups
