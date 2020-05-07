@@ -158,8 +158,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
-for_window [title="Hangouts"] move container to workspace 2
-
 set $Locker i3lock && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -201,3 +199,7 @@ exec --no-startup-id ibus-daemon -drx
 # dunst notifications daemon
 exec --no-startup-id dunst
 
+{{- if eq .chezmoi.hostname "arkenstone" -}}
+# configure monitors
+exec --no-startup-id xrandr --output HDMI-0 --auto --primary --rotate normal  --output DP-0 --auto --left-of HDMI-0 --output DP-2 --auto --right-of HDMI-0
+{{- end -}}
