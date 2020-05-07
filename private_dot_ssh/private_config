@@ -11,7 +11,7 @@ ForwardAgent no
 Include config.d/softnet
 
 # Global
-Host *.github.com
+Host *github.com
   User arccha
   IdentityFile ~/.ssh/personal
 Host bitbucket.org
