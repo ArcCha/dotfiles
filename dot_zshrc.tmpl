@@ -85,3 +85,5 @@ alias k="kubectl"
 alias t="terraform"
 alias clip="xclip -selection clipboard -t image/png -i " 
 export DOCKER_BUILDKIT=1
+
+alias pshell="podman exec -it $(podman ps | head -n2 | tail -n1 | cut -d' ' -f1) /bin/bash"

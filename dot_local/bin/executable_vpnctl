@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+import argparse
+import subprocess
+
+
+def on(args):
+    subprocess.run(['sudo', 'openvpn', f'/home/arccha/.config/openvpn/{args.name}.ovpn'])
+
+
+def off(args):
+    subprocess.run(['sudo', 'killall', 'openvpn'])
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    subparsers = parser.add_subparsers()
+
+    parser_on = subparsers.add_parser('on')
+    parser_on.add_argument('name', type=str)
+    parser_on.set_defaults(func=on)
+
+    parser_off = subparsers.add_parser('off')
+    parser_off.set_defaults(func=off)
+
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+    args.func(args)
+
+
+if __name__ == '__main__':
+    main()

@@ -1,2 +1,0 @@
-xrandr --output LVDS-0 --off
-xrandr --output DP-3 --auto --right-of DP-2
