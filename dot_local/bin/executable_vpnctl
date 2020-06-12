@@ -2,10 +2,40 @@
 
 import argparse
 import subprocess
+import tempfile
 
 
 def on(args):
-    subprocess.run(['sudo', 'openvpn', f'/home/arccha/.config/openvpn/{args.name}.ovpn'])
+    username = subprocess.check_output(
+        [
+            'bw',
+            'get',
+            'username',
+            'git.softnet.com.pl',
+        ],
+        text=True,
+    )
+    password = subprocess.check_output(
+        [
+            'bw',
+            'get',
+            'password',
+            'poczta.softnet.com.pl',
+        ],
+        text=True,
+    )
+    with tempfile.NamedTemporaryFile(mode='r+') as f:
+        f.write(f'{username}\n{password}')
+        f.seek(0)
+        subprocess.run(
+            [
+                'sudo',
+                'openvpn',
+                '--config', f'/home/arccha/.config/openvpn/{args.name}.ovpn',
+                '--auth-user-pass', f'{f.name}',
+                '--daemon',
+            ],
+        )
 
 
 def off(args):

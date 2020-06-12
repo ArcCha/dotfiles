@@ -125,6 +125,7 @@ sshfs
 sxiv
 sysstat
 systemd-boot-pacman-hook
+systemd-resolvconf
 tcpdump
 termite
 tree
