@@ -11,13 +11,15 @@ general {
     interval = 1
 }
 
-{{- if eq .chezmoi.hostname "stone" }}
+{{- if or (eq .chezmoi.hostname "stone") (eq .chezmoi.hostname "A3-P03") }}
 order += "battery 0"
 {{- end }}
 order += "volume master"
 order += "disk /"
 {{- if eq .chezmoi.hostname "stone" }}
 order += "disk /home"
+{{- end }}
+{{- if or (eq .chezmoi.hostname "stone") (eq .chezmoi.hostname "A3-P03") }}
 order += "wireless _first_"
 {{- end }}
 order += "ethernet _first_"
@@ -69,7 +71,7 @@ cpu_temperature 0 {
   format = "%degrees°C"
 }
 
-{{- if eq .chezmoi.hostname "stone" }}
+{{- if or (eq .chezmoi.hostname "stone") (eq .chezmoi.hostname "A3-P03") }}
 battery 0 {
   format = "%status %percentage %remaining"
 }

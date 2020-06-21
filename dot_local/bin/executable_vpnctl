@@ -6,6 +6,7 @@ import tempfile
 
 
 def on(args):
+    user = subprocess.check_output('echo $USER', shell=True, text=True).strip()
     username = subprocess.check_output(
         [
             'bw',
@@ -31,7 +32,7 @@ def on(args):
             [
                 'sudo',
                 'openvpn',
-                '--config', f'/home/arccha/.config/openvpn/{args.name}.ovpn',
+                '--config', f'/home/{user}/.config/openvpn/{args.name}.ovpn',
                 '--auth-user-pass', f'{f.name}',
                 '--daemon',
             ],
