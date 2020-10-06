@@ -69,7 +69,7 @@ export PATH="$PATH:$HOME/.local/bin"
 {{ if ne .chezmoi.hostname "DA31-AP2-S01" -}}
 # Conda
 source /opt/anaconda/etc/profile.d/conda.sh
-{{- end -}}
+{{ end -}}
 
 # added by travis gem
 [ -f /home/arccha/.travis/travis.sh ] && source /home/arccha/.travis/travis.sh
