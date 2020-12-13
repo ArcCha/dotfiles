@@ -6,7 +6,7 @@ ServerAliveCountMax 5
 # Try only keys that are explicitly listed in order to avoid
 # too many authentication failures
 IdentitiesOnly yes
-ForwardAgent no
+ForwardAgent yes
 
 Include config.d/softnet
 
