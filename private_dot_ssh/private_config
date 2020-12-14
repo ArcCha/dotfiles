@@ -9,6 +9,7 @@ IdentitiesOnly yes
 ForwardAgent yes
 
 Include config.d/softnet
+Include config.d/vbs-01
 
 # Global
 Host *github.com
