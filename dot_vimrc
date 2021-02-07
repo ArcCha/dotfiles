@@ -127,7 +127,6 @@ nmap <F12> :TagbarToggle<Cr>
 " rustfmt
 let g:rustfmt_autosave = 1
 
-
 " For auto reindent on file save
 " Restore cursor position, window position, and last search after running a
 " command.
@@ -161,3 +160,7 @@ endfunction
 function! Indent()
   call Preserve('normal gg=G')
 endfunction
+
+" vim_vue_plugin
+let g:vim_vue_plugin_use_typescript = 1
+let g:vim_vue_plugin_highlight_vue_keyword = 1
