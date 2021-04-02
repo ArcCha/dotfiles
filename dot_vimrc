@@ -18,6 +18,7 @@ Plugin 'universal-ctags/ctags'
 Plugin 'scrooloose/syntastic'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'digitaltoad/vim-pug'
 Plugin 'leafOfTree/vim-vue-plugin'
 
 Plugin 'VundleVim/Vundle.vim'
@@ -162,5 +163,18 @@ function! Indent()
 endfunction
 
 " vim_vue_plugin
-let g:vim_vue_plugin_use_typescript = 1
-let g:vim_vue_plugin_highlight_vue_keyword = 1
+let g:vim_vue_plugin_config = { 
+      \'syntax': {
+      \   'template': ['html', 'pug'],
+      \   'script': ['javascript'],
+      \   'style': ['css'],
+      \},
+      \'full_syntax': [],
+      \'attribute': 1,
+      \'keyword': 1,
+      \'foldexpr': 0,
+      \'init_indent': 0,
+      \'debug': 1,
+      \}
+
+set runtimepath-=~/.vim/bundle/vim-autoformat
