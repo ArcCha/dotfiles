@@ -2,7 +2,6 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'Chiel92/vim-autoformat'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'whiteinge/diffconflicts'
@@ -19,7 +18,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'digitaltoad/vim-pug'
-Plugin 'leafOfTree/vim-vue-plugin'
+Plugin 'posva/vim-vue'
+Plugin 'prettier/vim-prettier'
 
 Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
@@ -79,10 +79,6 @@ autocmd FileChangedShellPost *
 "nnoremap <silent> <Esc> :noh<Return><Esc>
 "map <silent> <esc> :noh<cr>
 
-" Autoformat
-let g:formatdef_php_formatter = '"php-formatter"'
-let g:formatters_php = ['php_formatter']
-
 " "
 " let g:EasyMotion_do_mapping = 0 " Disable default mappings
 "
@@ -128,53 +124,4 @@ nmap <F12> :TagbarToggle<Cr>
 " rustfmt
 let g:rustfmt_autosave = 1
 
-" For auto reindent on file save
-" Restore cursor position, window position, and last search after running a
-" command.
-function! Preserve(command)
-  " Save the last search.
-  let search = @/
 
-  " Save the current cursor position.
-  let cursor_position = getpos('.')
-
-  " Save the current window position.
-  normal! H
-  let window_position = getpos('.')
-  call setpos('.', cursor_position)
-
-  " Execute the command.
-  execute a:command
-
-  " Restore the last search.
-  let @/ = search
-
-  " Restore the previous window position.
-  call setpos('.', window_position)
-  normal! zt
-
-  " Restore the previous cursor position.
-  call setpos('.', cursor_position)
-endfunction
-
-" Re-indent the whole buffer.
-function! Indent()
-  call Preserve('normal gg=G')
-endfunction
-
-" vim_vue_plugin
-let g:vim_vue_plugin_config = { 
-      \'syntax': {
-      \   'template': ['html', 'pug'],
-      \   'script': ['javascript'],
-      \   'style': ['css'],
-      \},
-      \'full_syntax': [],
-      \'attribute': 1,
-      \'keyword': 1,
-      \'foldexpr': 0,
-      \'init_indent': 0,
-      \'debug': 1,
-      \}
-
-set runtimepath-=~/.vim/bundle/vim-autoformat
