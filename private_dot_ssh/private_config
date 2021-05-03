@@ -10,7 +10,20 @@ ForwardAgent yes
 
 Include config.d/softnet
 Include config.d/sandbox
-Include config.d/vbs-*
+# Include config.d/vbs-*
+# Include config.d/vbs-01
+# Include config.d/vbs-02
+# Include config.d/vbs-03
+# Include config.d/vbs-04
+# Include config.d/vbs-05
+# Include config.d/vbs-06
+# Include config.d/vbs-07
+# Include config.d/vbs-08
+# Include config.d/vbs-10
+# Include config.d/vbs-12
+# Include config.d/vbs-13
+Include config.d/vbs-15
+
 
 # Global
 Host *github.com
