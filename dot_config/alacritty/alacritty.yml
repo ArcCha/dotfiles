@@ -1,0 +1,10 @@
+scrolling:
+  history: 100000
+font:
+  normal:
+    family: 'Inconsolata-g for Powerline'
+  size: 13.0
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#00cc00'
