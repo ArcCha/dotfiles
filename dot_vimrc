@@ -20,6 +20,8 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'posva/vim-vue'
 Plugin 'prettier/vim-prettier'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
