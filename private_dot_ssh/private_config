@@ -8,8 +8,8 @@ ServerAliveCountMax 5
 IdentitiesOnly yes
 ForwardAgent yes
 
-Include config.d/softnet
 Include config.d/sandbox
+Include config.d/softnet
 
 # Global
 Host *github.com
