@@ -70,6 +70,7 @@ set splitbelow
 set splitright
 " Shorter time between swap file writes & also gitgutter refresh rate
 set updatetime=100
+set scrolloff=3
 
 
 " Trigger `autoread` when files change on disk
