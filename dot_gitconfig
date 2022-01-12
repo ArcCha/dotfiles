@@ -3,6 +3,8 @@
 [user]
 	name = Adam Piekarczyk
 	email = adam.jan.piekarczyk@gmail.com
+[includeIf "gitdir:~/SoftNet/"]
+  path = .gitconfig-softnet
 [color]
 	ui = true
 [merge]
