@@ -8,7 +8,6 @@ plugins=(
   battery
   extract
   encode64
-  git
   gitignore
   wakeonlan
   ssh-agent
@@ -43,8 +42,8 @@ alias e="exa -alh"
 #export CARGO_HOME=/home/arccha/.cargo
 export PATH="$PATH:$HOME/.cargo/bin"
 
-export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
