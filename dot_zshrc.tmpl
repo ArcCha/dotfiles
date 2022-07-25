@@ -26,7 +26,6 @@ if [[ -z $SSH_CONNECTION ]]; then
   export TERM='xterm'
 else
   export EDITOR='vim'
-  #export TERM='xterm'
 fi
 
 alias zshconfig="chezmoi edit ~/.zshrc"
@@ -38,12 +37,7 @@ alias cod="conda deactivate"
 alias ssha='find ~/.ssh/ -type f | grep -v ".*\.pub\|config\|known_hosts" | pick | xargs ssh-add'
 alias e="exa -alh"
 
-#export RUST_SRC_PATH=/home/arccha/programowanie/rust/rust/src
-#export CARGO_HOME=/home/arccha/.cargo
 export PATH="$PATH:$HOME/.cargo/bin"
-
-#export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
@@ -57,18 +51,10 @@ source /usr/share/fzf/completion.zsh
 
 eval "$(direnv hook zsh)"
 
-# Composer global packages
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-
 source /etc/profile.d/autojump.zsh
 
 # Local executables
 export PATH="$PATH:$HOME/.local/bin"
-
-{{ if ne .chezmoi.hostname "DA31-AP2-S01" -}}
-# Conda
-source /opt/anaconda/etc/profile.d/conda.sh
-{{ end -}}
 
 # added by travis gem
 [ -f /home/arccha/.travis/travis.sh ] && source /home/arccha/.travis/travis.sh
@@ -80,9 +66,14 @@ export TF_VAR_ssh_key_pub=$(cat ~/.ssh/work.pub)
 export SSH_PUB_KEY=$(cat ~/.ssh/work.pub)
 {{ end -}}
 
-alias k="kubectl"
 alias t="terraform"
 alias clip="xclip -selection clipboard -t image/png -i " 
 export DOCKER_BUILDKIT=1
 
 alias pshell="podman exec -it $(podman ps | head -n2 | tail -n1 | cut -d' ' -f1) /bin/bash"
+
+PATH=$PATH:/home/ap2/.local/share/gem/ruby/3.0.0/bin
+
+export ANSIBLE_VAULT_IDENTITY_LIST=prod@~/.ansible/vault-prod-pass.txt,sbx@~/.ansible/vault-sbx-pass.txt,certs@~/.ansible/vault-certs-pass.txt,old@~/.ansible/vault-old-pass.txt
+export ANSIBLE_VAULT_ENCRYPT_IDENTITY=prod
+

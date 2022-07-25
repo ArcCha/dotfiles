@@ -60,3 +60,9 @@ Host palantir
   IdentityFile ~/.ssh/personal
 
 
+# Wszechnica
+Host plantation.cloud
+  User rocky
+  Hostname vps-f7f04639.vps.ovh.net
+  IdentityFile ~/.ssh/personal
+
