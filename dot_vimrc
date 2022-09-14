@@ -22,6 +22,7 @@ Plugin 'posva/vim-vue'
 Plugin 'prettier/vim-prettier'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'wakatime/vim-wakatime'
 
 Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
