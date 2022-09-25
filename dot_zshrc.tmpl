@@ -22,14 +22,14 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin
 
 # Preferred editor for local and remote sessions
 if [[ -z $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-  export TERM='xterm'
+  export EDITOR='nvim'
 else
   export EDITOR='vim'
 fi
 
 alias zshconfig="chezmoi edit ~/.zshrc"
 alias vimconfig="chezmoi edit ~/.vimrc"
+alias nvimconfig="chezmoi edit ~/.config/nvim/init.vim"
 alias sshconfig="chezmoi edit ~/.ssh/config"
 alias pdfcompress='function _pdfcompress() { gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$2 $1; };_pdfcompress'
 alias coa="conda activate"
