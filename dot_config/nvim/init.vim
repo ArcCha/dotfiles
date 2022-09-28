@@ -128,4 +128,4 @@ nmap <F12> :TagbarToggle<Cr>
 " rustfmt
 let g:rustfmt_autosave = 1
 
-
+:iabbrev amail Hej,<CR><CR>

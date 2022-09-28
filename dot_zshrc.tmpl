@@ -25,6 +25,7 @@ if [[ -z $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
 else
   export EDITOR='vim'
+  export TERM='xterm'
 fi
 
 alias zshconfig="chezmoi edit ~/.zshrc"
