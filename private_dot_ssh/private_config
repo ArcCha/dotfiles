@@ -8,7 +8,6 @@ ServerAliveCountMax 5
 IdentitiesOnly yes
 ForwardAgent yes
 
-Include config.d/sandbox
 Include config.d/softnet
 
 # Global
@@ -22,43 +21,17 @@ Host gitlab.com
   User arccha
   IdentityFile ~/.ssh/personal
 
-# KSI UJ
-Host galadriel
-  User arccha
-  Hostname kogni3.ii.uj.edu.pl
+# raspberrypi
+Host raspi
+  User pi
+  Hostname 192.168.1.175
   IdentityFile ~/.ssh/personal
-Host arda
-  User adam.piekarczyk
-  Hostname arda.ksi.ii.uj.edu.pl
-  IdentityFile ~/.ssh/personal
-Host shire
-  User adam.piekarczyk
-  Hostname shire.ksi.ii.uj.edu.pl
-  IdentityFile ~/.ssh/personal
-
-# GMUM
-Host access-1
-  User apiekarczyk
-  Hostname access-1.capdnet.ii.uj.edu.pl
-  IdentityFile ~/.ssh/personal
-Host *.capdnet
-  User apiekarczyk
-  ProxyJump access-1
-  IdentityFile ~/.ssh/personal
-
-# SSUJ
-Host novix
-  User root
-  Hostname novix119.bj.uj.edu.pl
-  IdentityFile ~/.ssh/personal
-  ProxyJump galadriel
 
 # VPS
 Host palantir
   User arccha
   Hostname palantir.piekarczyk.io
   IdentityFile ~/.ssh/personal
-
 
 # Wszechnica
 Host plantation.cloud
