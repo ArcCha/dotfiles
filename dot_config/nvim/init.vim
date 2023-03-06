@@ -20,7 +20,6 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'posva/vim-vue'
-Plugin 'prettier/vim-prettier'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'wakatime/vim-wakatime'
@@ -129,3 +128,13 @@ nmap <F12> :TagbarToggle<Cr>
 let g:rustfmt_autosave = 1
 
 :iabbrev amail Hej,<CR><CR>
+
+" ALE config
+" remeber to install prettier on the system
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\   'vue': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
+

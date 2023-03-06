@@ -2,6 +2,7 @@
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 xset r rate 200 30
+xset s off -dpms
 setxkbmap pl
 
 exec i3
