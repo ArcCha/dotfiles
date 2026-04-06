@@ -8,34 +8,12 @@ ServerAliveCountMax 5
 IdentitiesOnly yes
 ForwardAgent yes
 
-Include config.d/softnet
-
-# Global
-Host *github.com
+Host github.com
   User arccha
-  IdentityFile ~/.ssh/personal
-Host bitbucket.org
-  User arccha
-  IdentityFile ~/.ssh/personal
-Host gitlab.com
-  User arccha
-  IdentityFile ~/.ssh/personal
+  IdentityFile ~/.ssh/github
 
-# raspberrypi
-Host raspi
-  User pi
-  Hostname 192.168.1.175
-  IdentityFile ~/.ssh/personal
-
-# VPS
 Host palantir
   User arccha
   Hostname palantir.piekarczyk.io
-  IdentityFile ~/.ssh/personal
-
-# Wszechnica
-Host plantation.cloud
-  User rocky
-  Hostname vps-f7f04639.vps.ovh.net
   IdentityFile ~/.ssh/personal
 
