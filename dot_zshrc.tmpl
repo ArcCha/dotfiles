@@ -45,6 +45,9 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 bindkey -v
 export KEYTIMEOUT=1
 
+# Local executables
+export PATH="$PATH:$HOME/.local/bin"
+
 source <(fzf --zsh)
 
 {{ if eq .chezmoi.hostname "raspi" }}
@@ -53,8 +56,6 @@ source /usr/share/autojump/autojump.zsh
 source /etc/profile.d/autojump.zsh
 {{ end }}
 
-# Local executables
-export PATH="$PATH:$HOME/.local/bin"
 
 export GOPATH="$HOME/.go"
 
