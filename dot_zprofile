@@ -1,0 +1,8 @@
+# Desktop identity inherited by Sway and applications launched from it.
+export XDG_CURRENT_DESKTOP='sway'
+export XDG_SESSION_DESKTOP='sway'
+
+# Input method environment inherited by Sway and applications launched from it.
+# GTK Wayland applications use the compositor's native text-input protocol.
+export XMODIFIERS='@im=fcitx'
+export QT_IM_MODULE='fcitx'

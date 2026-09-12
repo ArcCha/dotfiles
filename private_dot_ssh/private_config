@@ -1,19 +1,12 @@
-# vim: ft=sshconfig
-
-# Keep ssh connections alive
-ServerAliveInterval 60
-ServerAliveCountMax 5
-# Try only keys that are explicitly listed in order to avoid
-# too many authentication failures
-IdentitiesOnly yes
-ForwardAgent yes
-
+# GitHub uses the hardware-backed security-key credential created on terra.
 Host github.com
-  User arccha
-  IdentityFile ~/.ssh/github
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ecdsa_sk
+    IdentitiesOnly yes
 
-Host palantir
-  User arccha
-  Hostname palantir.piekarczyk.io
-  IdentityFile ~/.ssh/personal
-
+Host *
+    ServerAliveInterval 60
+    ServerAliveCountMax 5
+    AddKeysToAgent yes
+    ForwardAgent no

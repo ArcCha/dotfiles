@@ -1,23 +1,24 @@
-[core]
-	editor = vim
 [user]
 	name = Adam Piekarczyk
 	email = adam.jan.piekarczyk@gmail.com
-[includeIf "gitdir:~/SoftNet/"]
-  path = .gitconfig-softnet
+
+[core]
+	editor = nvim
+
+[init]
+	defaultBranch = main
+
 [color]
-	ui = true
+	ui = auto
+
+[fetch]
+	prune = true
+
+[diff]
+	algorithm = histogram
+
 [merge]
-	tool = diffconflicts
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[mergetool "diffconflicts"]
-	cmd = vim -c DiffConflicts \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
-	trustExitCode = true
-[mergetool]
-	keepBackup = false
-[credential]
-	helper = store
+	conflictStyle = zdiff3
+
+[push]
+	autoSetupRemote = true

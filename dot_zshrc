@@ -1,0 +1,105 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="miloshadzic"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Chezmoi owns Oh My Zsh updates.
+zstyle ':omz:update' mode disabled
+
+# Reuse an existing agent when available. Start one otherwise, but wait until
+# first use before asking for a key passphrase.
+zstyle :omz:plugins:ssh-agent honor-existing yes
+zstyle :omz:plugins:ssh-agent lazy yes
+zstyle :omz:plugins:ssh-agent quiet yes
+
+plugins=(
+  git
+  battery
+  extract
+  encode64
+  gitignore
+  wakeonlan
+  ssh-agent
+  vi-mode
+)
+
+source "$ZSH/oh-my-zsh.sh"
+
+# Keep each path once, with user-installed commands taking precedence.
+typeset -U path PATH
+export GOPATH="$HOME/.go"
+path=(
+  "$HOME/.local/bin"
+  "$HOME/.cargo/bin"
+  "$GOPATH/bin"
+  $path
+)
+
+export TERMCMD="foot"
+
+# Prefer Neovim locally and retain Vim as the remote fallback.
+if [[ -z "$SSH_CONNECTION" ]]; then
+  export EDITOR="nvim"
+else
+  export EDITOR="vim"
+fi
+export VISUAL="$EDITOR"
+
+alias zshconfig='chezmoi edit ~/.zshrc'
+alias vimconfig='chezmoi edit ~/.vimrc'
+alias nvimconfig='chezmoi edit ~/.config/nvim/init.lua'
+alias sshconfig='chezmoi edit ~/.ssh/config'
+alias e='eza -alh --group-directories-first'
+
+pdfcompress() {
+  if (( $# != 2 )); then
+    print -u2 'usage: pdfcompress INPUT.pdf OUTPUT.pdf'
+    return 2
+  fi
+  gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen \
+    -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2" -- "$1"
+}
+
+# Copy a PNG file, or standard input, to the Wayland clipboard.
+clip() {
+  if (( $# == 1 )); then
+    wl-copy --type image/png < "$1"
+  elif (( $# == 0 )); then
+    wl-copy --type image/png
+  else
+    print -u2 'usage: clip [IMAGE.png]'
+    return 2
+  fi
+}
+
+# The current security-key credential is not auto-loaded during shell startup.
+ssha() {
+  ssh-add "${1:-$HOME/.ssh/id_ecdsa_sk}"
+}
+
+bindkey -v
+export KEYTIMEOUT=1
+
+# Current integrations supplied by repository packages.
+source <(fzf --zsh)
+eval "$(zoxide init zsh)"
+eval "$(direnv hook zsh)"
+
+##########
+# HISTORY
+##########
+
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=50000
+
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt SHARE_HISTORY
+unsetopt HIST_VERIFY
