@@ -77,6 +77,18 @@ ssha() {
   ssh-add "${1:-$HOME/.ssh/id_ecdsa_sk}"
 }
 
+# Start Yazi and follow it to the directory selected when quitting with q.
+y() {
+  local tmp cwd
+  tmp="$(mktemp -t 'yazi-cwd.XXXXXX')" || return
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd < "$tmp"
+  rm -f -- "$tmp"
+  if [[ -n "$cwd" && "$cwd" != "$PWD" && -d "$cwd" ]]; then
+    builtin cd -- "$cwd"
+  fi
+}
+
 bindkey -v
 export KEYTIMEOUT=1
 

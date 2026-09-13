@@ -1,5 +1,0 @@
-[Unit]
-Description=Home cleaner
-[Service]
-ExecStart=%h/.bin/home-cleaner
-
