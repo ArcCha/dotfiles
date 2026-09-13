@@ -16,6 +16,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 playerctl
 polkit-gnome
+rtkit
 seahorse
 slurp
 sway
