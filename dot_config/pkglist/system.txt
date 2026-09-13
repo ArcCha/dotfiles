@@ -4,6 +4,7 @@ base
 bluez
 bluez-utils
 btrfs-progs
+dosfstools
 efibootmgr
 grub
 linux
@@ -14,4 +15,5 @@ nvidia-utils
 pipewire-alsa
 pipewire-pulse
 sudo
+wireless-regdb
 zram-generator
