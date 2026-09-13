@@ -1,0 +1,17 @@
+alsa-utils
+amd-ucode
+base
+bluez
+bluez-utils
+btrfs-progs
+efibootmgr
+grub
+linux
+linux-firmware
+networkmanager
+nvidia-open
+nvidia-utils
+pipewire-alsa
+pipewire-pulse
+sudo
+zram-generator
