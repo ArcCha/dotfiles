@@ -8,8 +8,9 @@ set $lock swaylock -f -c 002b36
 font pango:DejaVu Sans Mono 10
 floating_modifier $mod normal
 
-# Current terra display. Revisit scale if UI elements are too small at 4K.
-output HDMI-A-1 mode 3840x2160@60Hz position 0,0 scale 1
+# Dual 4K displays connected to the NVIDIA GPU over DisplayPort.
+output DP-6 mode 3840x2160@60Hz position 0,0 scale 1
+output DP-5 mode 3840x2160@60Hz position 3840,0 scale 1
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 input type:keyboard {
