@@ -21,6 +21,7 @@ plugins=(
   wakeonlan
   ssh-agent
   vi-mode
+  herdr
 )
 
 source "$ZSH/oh-my-zsh.sh"
