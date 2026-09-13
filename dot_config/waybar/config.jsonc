@@ -8,7 +8,7 @@
   "modules-right": ["pulseaudio", "network", "cpu", "memory", "disk", "tray", "clock"],
   "sway/workspaces": {
     "disable-scroll": true,
-    "all-outputs": true,
+    "all-outputs": false,
     "format": "{name}"
   },
   "sway/mode": {
