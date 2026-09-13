@@ -1,0 +1,24 @@
+program_options:
+  automount: true
+  notify: true
+  tray: auto
+  menu: flat
+  appindicator: true
+  file_manager: "foot -- yazi"
+  terminal: "foot --working-directory"
+  password_prompt: "builtin:gui"
+  password_cache: false
+
+device_config:
+  # Never offer or automount fixed internal storage.
+  - is_systeminternal: true
+    ignore: true
+    automount: false
+
+notifications:
+  timeout: 5
+  device_added: false
+  device_removed: false
+  device_mounted: 5
+  device_unmounted: 5
+  job_failed: -1

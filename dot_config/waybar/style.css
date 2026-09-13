@@ -1,8 +1,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "DejaVu Sans Mono", "Symbols Nerd Font Mono";
-  font-size: 13px;
+  font-family: "Inconsolata Nerd Font Mono", "Noto Sans Mono CJK JP", "Symbols Nerd Font Mono";
+  font-size: 16px;
   min-height: 0;
 }
 
@@ -12,7 +12,7 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 10px;
+  padding: 0 12px;
   background: #002b36;
   color: #93a1a1;
 }
@@ -28,7 +28,7 @@ window#waybar {
 }
 
 #mode {
-  padding: 0 10px;
+  padding: 0 12px;
   background: #dc322f;
   color: #fdf6e3;
 }
@@ -41,7 +41,7 @@ window#waybar {
 #disk,
 #tray,
 #clock {
-  padding: 0 8px;
+  padding: 0 10px;
 }
 
 #pulseaudio.muted,

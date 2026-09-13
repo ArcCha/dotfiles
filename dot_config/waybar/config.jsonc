@@ -1,8 +1,8 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 30,
-  "spacing": 8,
+  "height": 40,
+  "spacing": 10,
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["sway/window"],
   "modules-right": ["pulseaudio", "network", "cpu", "memory", "disk", "tray", "clock"],
@@ -43,7 +43,7 @@
     "path": "/"
   },
   "tray": {
-    "spacing": 8
+    "spacing": 10
   },
   "clock": {
     "interval": 1,
