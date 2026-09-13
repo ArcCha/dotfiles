@@ -9,8 +9,10 @@ efibootmgr
 grub
 linux
 linux-firmware
+linux-lts
 networkmanager
 nvidia-open
+nvidia-open-lts
 nvidia-utils
 pipewire-alsa
 pipewire-pulse
