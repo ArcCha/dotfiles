@@ -2,6 +2,7 @@
 base-devel
 bat
 bitwarden-cli
+bun
 chafa
 chezmoi
 direnv
@@ -15,11 +16,13 @@ imagemagick
 jq
 libfido2
 lua-language-server
+mosh
 neovim
 npm
 openssh
 poppler
 ripgrep
+tailscale
 tree-sitter-cli
 vim
 yazi

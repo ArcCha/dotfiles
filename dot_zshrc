@@ -30,6 +30,7 @@ typeset -U path PATH
 export GOPATH="$HOME/.go"
 path=(
   "$HOME/.local/bin"
+  "$HOME/.bun/bin"
   "$HOME/.cargo/bin"
   "$GOPATH/bin"
   $path

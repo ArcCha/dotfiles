@@ -1,0 +1,45 @@
+# Global machine instructions
+
+## Dotfile management
+
+This account manages user configuration with chezmoi.
+
+- Active chezmoi source: `{{ .chezmoi.sourceDir }}`.
+- The historical `~/dotfiles` checkout is not the active source; do not edit it.
+- `~/.dotfiles` contains migration notes and TODO documentation, not deployed
+  configuration.
+- Before changing a dotfile or configuration under `$HOME`, check whether
+  chezmoi manages it with `chezmoi managed --path-style absolute` and inspect
+  any drift with `chezmoi diff -- <target>`.
+- Never edit a managed destination such as `~/.zshrc` or `~/.config/...`
+  directly. Edit the corresponding file under `{{ .chezmoi.sourceDir }}`.
+- If a managed destination already has an external/manual change, preserve it:
+  review the diff and merge the desired change into the source before applying.
+  Do not overwrite it blindly.
+- For a new user configuration file that should persist, use `chezmoi add
+  <target>` (with appropriate template, private, or encryption attributes)
+  rather than leaving an unmanaged file.
+- Preview changes with a targeted `chezmoi diff`, apply with a targeted
+  `chezmoi apply`, validate the affected program, and confirm `chezmoi status`
+  afterward.
+- Commit changes from the chezmoi source repository. Pushing over SSH may
+  require a physical YubiKey touch.
+- Never commit credentials or secret-bearing runtime files. In particular,
+  Pi authentication and session files and GNOME Keyring data are not dotfiles.
+- Project-owned files inside normal code repositories are edited normally;
+  this chezmoi workflow applies to account/machine configuration, not every
+  file under `$HOME`.
+
+{{ if eq .chezmoi.hostname "terra" -}}
+## Terra-specific policy
+
+- This host runs Arch Linux with Sway.
+- Curated top-level package manifests live in
+  `~/.config/pkglist/{system,desktop,tools}.txt`. When deliberately installing
+  or removing Arch packages, update the appropriate managed manifest.
+- `/etc` is not managed by chezmoi. Treat system configuration changes as
+  explicit administrative work, inspect first, and create a backup when
+  appropriate.
+- Current migration notes and deferred work are in
+  `~/.dotfiles/migration.md` and `~/.dotfiles/todo.md`.
+{{ end -}}
