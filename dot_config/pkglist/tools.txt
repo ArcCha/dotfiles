@@ -25,6 +25,7 @@ ripgrep
 tailscale
 tree-sitter-cli
 vim
+vulkan-tools
 yazi
 yubikey-manager
 zoxide

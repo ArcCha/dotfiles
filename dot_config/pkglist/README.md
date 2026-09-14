@@ -7,6 +7,11 @@ package installed by Pacman.
 Review the lists before restoring them on another machine. Hardware and boot
 packages in `system.txt` are specific to this AMD/NVIDIA system.
 
+Steam and `lib32-nvidia-utils` require Arch's official `[multilib]` repository.
+Enable its existing section in `/etc/pacman.conf` and perform a full
+`pacman -Syu` before restoring these manifests; never use a standalone
+`pacman -Sy` partial upgrade.
+
 Install all listed repository packages with:
 
 ```sh

@@ -19,6 +19,7 @@ polkit-gnome
 rtkit
 seahorse
 slurp
+steam
 sway
 swaybg
 swayidle
