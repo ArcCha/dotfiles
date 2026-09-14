@@ -1,4 +1,5 @@
 7zip
+aerc
 base-devel
 bat
 bitwarden-cli
