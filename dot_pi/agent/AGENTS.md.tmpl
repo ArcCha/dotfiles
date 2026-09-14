@@ -5,9 +5,11 @@
 This account manages user configuration with chezmoi.
 
 - Active chezmoi source: `{{ .chezmoi.sourceDir }}`.
-- The historical `~/dotfiles` checkout is not the active source; do not edit it.
-- `~/.dotfiles` contains migration notes and TODO documentation, not deployed
-  configuration.
+- The historical `~/dotfiles` checkout was retired; do not recreate or use it
+  as the active source.
+- Operational migration and recovery documents live under
+  `~/toolchain-configuration`; start with its `README.md`. They are reference
+  material, not deployed configuration.
 - Before changing a dotfile or configuration under `$HOME`, check whether
   chezmoi manages it with `chezmoi managed --path-style absolute` and inspect
   any drift with `chezmoi diff -- <target>`.
@@ -40,6 +42,6 @@ This account manages user configuration with chezmoi.
 - `/etc` is not managed by chezmoi. Treat system configuration changes as
   explicit administrative work, inspect first, and create a backup when
   appropriate.
-- Current migration notes and deferred work are in
-  `~/.dotfiles/migration.md` and `~/.dotfiles/todo.md`.
+- Current migration, reinstall, and deferred-work documents are linked from
+  `~/toolchain-configuration/README.md`.
 {{ end -}}
