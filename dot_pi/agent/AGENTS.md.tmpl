@@ -10,6 +10,9 @@ This account manages user configuration with chezmoi.
 - Operational migration and recovery documents live under
   `~/toolchain-configuration`; start with its `README.md`. They are reference
   material, not deployed configuration.
+- Before designing or implementing a personal application, automation, or
+  developer tool for this account, read
+  `~/toolchain-configuration/software-preferences.md`.
 - Before changing a dotfile or configuration under `$HOME`, check whether
   chezmoi manages it with `chezmoi managed --path-style absolute` and inspect
   any drift with `chezmoi diff -- <target>`.
