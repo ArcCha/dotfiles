@@ -1,8 +1,8 @@
-# GitHub uses the hardware-backed security-key credential created on terra.
+# GitHub uses a dedicated software key so routine pushes do not require the YubiKey.
 Host github.com
     HostName github.com
     User git
-    IdentityFile ~/.ssh/id_ecdsa_sk
+    IdentityFile ~/.ssh/github-without-yubi
     IdentitiesOnly yes
 
 Host *
