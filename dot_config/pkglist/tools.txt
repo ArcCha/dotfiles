@@ -17,6 +17,8 @@ imagemagick
 jq
 libfido2
 lua-language-server
+man-db
+man-pages
 mosh
 neovim
 npm
