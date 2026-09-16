@@ -24,6 +24,7 @@ neovim
 npm
 openssh
 poppler
+qpdf
 ripgrep
 tailscale
 tree-sitter-cli
