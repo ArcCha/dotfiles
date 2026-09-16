@@ -1,5 +1,6 @@
 alsa-utils
 amd-ucode
+avahi
 base
 bluez
 bluez-utils
@@ -12,6 +13,7 @@ linux
 linux-firmware
 linux-lts
 networkmanager
+nss-mdns
 nvidia-open
 nvidia-open-lts
 nvidia-utils
