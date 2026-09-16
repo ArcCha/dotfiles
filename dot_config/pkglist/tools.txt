@@ -28,6 +28,7 @@ qpdf
 ripgrep
 tailscale
 tree-sitter-cli
+unzip
 vim
 vulkan-tools
 yazi
