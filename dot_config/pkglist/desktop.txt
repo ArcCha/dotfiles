@@ -25,6 +25,7 @@ sway
 swaybg
 swayidle
 swaylock
+thunderbird
 ttf-inconsolata-nerd
 ttf-nerd-fonts-symbols-mono
 udiskie
