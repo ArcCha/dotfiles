@@ -26,6 +26,7 @@ ollama-cuda
 openssh
 poppler
 qpdf
+rclone
 ripgrep
 tailscale
 tesseract

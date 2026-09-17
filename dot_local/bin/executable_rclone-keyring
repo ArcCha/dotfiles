@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+exec /usr/bin/rclone \
+  --password-command "/usr/bin/secret-tool lookup application rclone purpose config-password user arccha" \
+  "$@"
