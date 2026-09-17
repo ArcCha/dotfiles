@@ -6,5 +6,10 @@
   "packages": [
     "npm:pi-sub-aliases",
     "npm:pi-screenshots-picker@1.2.2"
-  ]
+  ],
+  "pi-screenshots": {
+    "sources": [
+      "~/Downloads"
+    ]
+  }
 }
