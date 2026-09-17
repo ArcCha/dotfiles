@@ -12,16 +12,28 @@ Enable its existing section in `/etc/pacman.conf` and perform a full
 `pacman -Syu` before restoring these manifests; never use a standalone
 `pacman -Sy` partial upgrade.
 
-Install all listed repository packages with:
+Install the listed official-repository packages with:
 
 ```sh
-grep -hEv '^[[:space:]]*(#|$)' ~/.config/pkglist/*.txt \
+grep -hEv '^[[:space:]]*(#|$)' \
+  ~/.config/pkglist/system.txt \
+  ~/.config/pkglist/desktop.txt \
+  ~/.config/pkglist/tools.txt \
   | sudo pacman -S --needed -
 ```
 
-There is currently no AUR manifest because `pacman -Qqem` is empty. Add an AUR
-list only when a real workflow requires foreign packages; do not restore the
-historical package dump.
+Foreign packages are deliberately kept in `aur.txt`; never pass that file to
+`pacman`. Bootstrap `yay` from its reviewed AUR Git repository on a new host,
+then review each listed PKGBUILD and restore accepted packages with:
+
+```sh
+grep -Ev '^[[:space:]]*(#|$)' ~/.config/pkglist/aur.txt \
+  | xargs -r yay -S --needed --
+```
+
+The manifest records intentional top-level packages only. Generated `-debug`
+split packages are not package intent, even if `makepkg` installs them during a
+build. Do not restore the historical foreign-package dump.
 
 GNOME Keyring also requires these local console-login hooks in
 `/etc/pam.d/login` after the corresponding `system-local-login` includes:
