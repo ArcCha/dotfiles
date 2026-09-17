@@ -21,6 +21,7 @@ rtkit
 seahorse
 slurp
 steam
+swappy
 sway
 swaybg
 swayidle

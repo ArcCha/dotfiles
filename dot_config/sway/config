@@ -113,9 +113,12 @@ bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioStop exec playerctl stop
 
-# Screenshots are written by grim to its timestamped default filename.
+# Direct captures use grim's timestamped default filename. Edited captures are
+# piped to Swappy without first writing an unredacted image to disk.
 bindsym Print exec grim
 bindsym Shift+Print exec grim -g "$(slurp)"
+bindsym Ctrl+Print exec grim - | swappy -f -
+bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) power off
 mode "$mode_system" {
