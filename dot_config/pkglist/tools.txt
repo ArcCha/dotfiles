@@ -25,6 +25,7 @@ npm
 ollama-cuda
 openssh
 poppler
+pwgen
 qpdf
 rclone
 ripgrep
