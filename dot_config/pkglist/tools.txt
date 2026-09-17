@@ -28,6 +28,8 @@ poppler
 qpdf
 ripgrep
 tailscale
+tesseract
+tesseract-data-pol
 tree-sitter-cli
 unzip
 vim
