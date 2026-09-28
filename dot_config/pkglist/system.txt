@@ -5,6 +5,7 @@ base
 bluez
 bluez-utils
 btrfs-progs
+cups
 dosfstools
 efibootmgr
 grub
