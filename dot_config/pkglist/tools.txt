@@ -34,6 +34,7 @@ tesseract
 tesseract-data-pol
 tree-sitter-cli
 unzip
+uv
 vim
 vulkan-tools
 yazi
