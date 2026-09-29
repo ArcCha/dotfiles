@@ -10,5 +10,7 @@ export QT_IM_MODULE='fcitx'
 # Start Sway after a local login on the first virtual console. Using exec means
 # that exiting Sway ends the login session and returns to the console prompt.
 if [[ -z "${WAYLAND_DISPLAY:-}" && -z "${SSH_CONNECTION:-}" && "${XDG_VTNR:-}" == 1 ]]; then
+  # PAM has unlocked GNOME Keyring by now; the lingering user manager starts too early.
+  systemctl --user start --no-block rclone-icloud.service
   exec sway --unsupported-gpu
 fi
