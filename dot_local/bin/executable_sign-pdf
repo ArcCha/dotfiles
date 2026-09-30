@@ -1,0 +1,10 @@
+#!/bin/sh
+# Chezmoi installs this command; the signing tool remains in its own repository.
+set -eu
+
+tool="$HOME/toolchain-configuration/terra/simplysign/sign-pdf"
+if [ ! -x "$tool" ]; then
+    printf '%s\n' 'sign-pdf: restore ~/toolchain-configuration/terra/simplysign first (see terra/reinstall.md)' >&2
+    exit 127
+fi
+exec "$tool" "$@"
