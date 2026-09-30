@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=SimplySign Desktop
+Comment=SimplySign cloud certificate and PKCS#11 desktop client
+Exec=simplysign-desktop
+Icon=/opt/SimplySignDesktop/icon_64x64.png
+Terminal=false
+Categories=Utility;
+StartupNotify=false
