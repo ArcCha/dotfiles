@@ -38,6 +38,7 @@ uv
 vim
 vulkan-tools
 yazi
+yt-dlp
 yubikey-manager
 zoxide
 zsh
