@@ -33,6 +33,10 @@ ripgrep
 tailscale
 tesseract
 tesseract-data-pol
+texlive-basic
+texlive-fontsrecommended
+texlive-latex
+texlive-latexrecommended
 tree-sitter-cli
 unzip
 uv
