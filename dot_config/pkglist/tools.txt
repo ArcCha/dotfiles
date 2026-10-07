@@ -24,6 +24,7 @@ neovim
 npm
 ollama-cuda
 openssh
+pandoc
 poppler
 pwgen
 qpdf
