@@ -53,6 +53,7 @@ alias vimconfig='chezmoi edit ~/.vimrc'
 alias nvimconfig='chezmoi edit ~/.config/nvim/init.lua'
 alias sshconfig='chezmoi edit ~/.ssh/config'
 alias e='eza -alh --group-directories-first'
+alias o='xdg-open'
 
 pdfcompress() {
   if (( $# != 2 )); then
