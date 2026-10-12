@@ -55,6 +55,25 @@ alias sshconfig='chezmoi edit ~/.ssh/config'
 alias e='eza -alh --group-directories-first'
 alias o='xdg-open'
 
+# Decrypt in place; qpdf stages output before replacing the original.
+pdfunlock() {
+  if (( $# != 1 )); then
+    print -u2 'usage: pdfunlock FILE.pdf'
+    return 2
+  fi
+  local file=${1:a} password
+  if [[ ! -f "$file" || -L "$file" ]]; then
+    print -u2 'pdfunlock: expected a regular, non-symlink file'
+    return 2
+  fi
+  if ! read -rs 'password?PDF password: ' </dev/tty; then
+    print -u2 ''
+    return 1
+  fi
+  print -u2 ''
+  print -r -- "$password" | command qpdf --password-file=- --decrypt --replace-input "$file"
+}
+
 pdfcompress() {
   if (( $# != 2 )); then
     print -u2 'usage: pdfcompress INPUT.pdf OUTPUT.pdf'
