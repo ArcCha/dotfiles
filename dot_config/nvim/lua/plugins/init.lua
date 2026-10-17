@@ -40,6 +40,27 @@ return {
   },
 
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    lazy = false, -- Neo-tree lazily loads its own sources.
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    keys = {
+      { "<leader>e", "<cmd>Neotree toggle<CR>", desc = "Toggle file tree" },
+      { "<leader>fE", "<cmd>Neotree reveal<CR>", desc = "Reveal file in tree" },
+    },
+    opts = {
+      window = { width = 40 },
+      filesystem = {
+        follow_current_file = { enabled = true, leave_dirs_open = true },
+      },
+    },
+  },
+
+  {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
     keys = {
