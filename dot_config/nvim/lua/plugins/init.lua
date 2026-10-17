@@ -40,6 +40,32 @@ return {
   },
 
   {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    keys = {
+      { "<leader>z", "<cmd>ZenMode<CR>", desc = "Toggle reading mode" },
+    },
+    opts = {
+      window = {
+        width = 90,
+        options = {
+          wrap = true,
+          linebreak = true,
+          breakindent = true,
+          number = false,
+          relativenumber = false,
+          signcolumn = "no",
+          foldcolumn = "0",
+          list = false,
+        },
+      },
+      plugins = {
+        twilight = { enabled = false },
+      },
+    },
+  },
+
+  {
     "lewis6991/gitsigns.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = {},
