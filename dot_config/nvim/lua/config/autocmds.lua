@@ -9,6 +9,20 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
   end,
 })
 
+-- Show the file tree on interactive startup without stealing editor focus.
+vim.api.nvim_create_autocmd("UIEnter", {
+  group = group,
+  once = true,
+  callback = function()
+    vim.schedule(function()
+      if vim.wo.diff or vim.bo.buftype ~= "" then
+        return
+      end
+      require("neo-tree.command").execute({ action = "show", source = "filesystem", position = "left" })
+    end)
+  end,
+})
+
 vim.api.nvim_create_autocmd("FileChangedShellPost", {
   group = group,
   callback = function()
