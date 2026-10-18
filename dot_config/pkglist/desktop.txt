@@ -28,6 +28,7 @@ swappy
 sway
 swaybg
 swayidle
+swayimg
 swaylock
 thunderbird
 ttf-inconsolata-nerd
