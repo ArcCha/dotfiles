@@ -55,6 +55,11 @@ alias sshconfig='chezmoi edit ~/.ssh/config'
 alias e='eza -alh --group-directories-first'
 alias o='xdg-open'
 
+# Manage system libvirt domains with authenticated sudo.
+v() {
+  sudo virsh --connect qemu:///system "$@"
+}
+
 # Decrypt in place; qpdf stages output before replacing the original.
 pdfunlock() {
   if (( $# != 1 )); then
