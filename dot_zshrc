@@ -57,7 +57,7 @@ alias o='xdg-open'
 
 # Manage system libvirt domains with authenticated sudo.
 v() {
-  sudo /usr/bin/env VIRSH_EDITOR=/usr/bin/nvim virsh --connect qemu:///system "$@"
+  sudo /usr/bin/env VISUAL=/usr/bin/nvim EDITOR=/usr/bin/nvim virsh --connect qemu:///system "$@"
 }
 
 # Decrypt in place; qpdf stages output before replacing the original.
