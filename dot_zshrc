@@ -54,8 +54,6 @@ alias nvimconfig='chezmoi edit ~/.config/nvim/init.lua'
 alias sshconfig='chezmoi edit ~/.ssh/config'
 alias e='eza -alh --group-directories-first'
 alias o='xdg-open'
-# The trailing space enables alias expansion for the command after sudo.
-alias sudo='sudo '
 
 # Manage system libvirt domains with authenticated sudo.
 v() {
